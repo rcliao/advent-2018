@@ -1,11 +1,19 @@
 package day1
 
-import "fmt"
+import (
+	"strconv"
+	"strings"
+)
 
 type Solution struct {
 }
 
 func (s Solution) Solve(input string) string {
-	fmt.Println(input)
-	return ""
+	numbers := strings.Split(input, "\n")
+	var frequncy = 0
+	for _, number := range numbers {
+		i, _ := strconv.Atoi(number)
+		frequncy += i
+	}
+	return strconv.Itoa(frequncy)
 }
